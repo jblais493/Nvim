@@ -81,6 +81,10 @@ return {
   priority = 1000, -- Very high priority is required, luarocks.nvim should run as the first plugin in your config.
   config = true,
   },
+{
+  "nathangrigg/vim-beancount",
+  ft = "beancount", -- optional: restrict the plugin to the 'beancount' filetype
+},
   -- These are some examples, uncomment them if you want to see them work!
   -- {
   --   "neovim/nvim-lspconfig",
