@@ -8,6 +8,7 @@ vim.opt.spell = true
 vim.opt.textwidth = 80
 vim.opt.wrap = true
 vim.opt.linebreak = true
+vim.filetype.add({ extension = { templ = "templ" } })
 
 -- local o = vim.o
 -- o.cursorlineopt ='both' -- to enable cursorline!
