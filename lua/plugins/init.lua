@@ -134,20 +134,41 @@ return {
     },
   },
 
+
+{
+  "rcarriga/nvim-notify",
+  opts = {
+    render = "minimal",  -- use the minimal render style
+    stages = "slide",  -- use the slide animation for notifications
+    timeout = 2000,  -- display notifications for 3 seconds
+    maximum_width = 0.5,  -- set the maximum width of the notification window to 50% of the screen
+    maximum_height = 0.2,  -- set the maximum height of the notification window to 20% of the screen
+  },
+},
+
+
 {
   "folke/noice.nvim",
   event = "VeryLazy",
   opts = {
-    -- add any options here
+    -- You can add any additional options here
   },
   dependencies = {
-    -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
     "MunifTanjim/nui.nvim",
+    "rcarriga/nvim-notify",
   },
   config = function()
     require("noice").setup({
       views = {
         cmdline_popup = {
+          position = {
+            row = "50%",
+            col = "50%",
+          },
+          size = {
+            width = 60,
+            height = "auto",
+          },
           border = {
             style = "none",
             padding = { 2, 3 },
@@ -155,6 +176,24 @@ return {
           filter_options = {},
           win_options = {
             winhighlight = "NormalFloat:NormalFloat,FloatBorder:FloatBorder",
+          },
+        },
+        popupmenu = {
+          relative = "editor",
+          position = {
+            row = "60%",
+            col = "50%",
+          },
+          size = {
+            width = 60,
+            height = 10,
+          },
+          border = {
+            style = "none",
+            padding = { 0, 1 },
+          },
+          win_options = {
+            winhighlight = { Normal = "Normal", FloatBorder = "DiagnosticInfo" },
           },
         },
       },
