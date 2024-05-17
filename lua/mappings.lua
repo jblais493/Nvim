@@ -19,3 +19,4 @@ end, {remap=true})
 
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
 vim.api.nvim_set_keymap('n', '<leader>on', ':ObsidianNew<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<leader>fc', ':Commands<CR>', { noremap = true, silent = true })
