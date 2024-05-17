@@ -150,6 +150,20 @@ commit = "29be0919b91fb59eca9e90690d76014233392bef",
         path = "~/Vaults/Writing",
       },
     },-- Specify how to handle attachments.
+
+    daily_notes = {
+    -- Optional, if you keep daily notes in a separate directory.
+      folder = "Personal/dailies",
+    -- Optional, if you want to change the date format for the ID of daily notes.
+      date_format = "%Y-%m-%d",
+    -- Optional, if you want to change the date format of the default alias of daily notes.
+      alias_format = "%B %-d, %Y",
+    -- Optional, if you want to automatically insert a template from your template directory like 'daily.md'
+      template = nil
+    },
+
+    new_notes_location = "notes_subdir",
+
   attachments = {
     -- The default folder to place images in via `:ObsidianPasteImg`.
     -- If this is a relative path it will be interpreted as relative to the vault root.
@@ -171,15 +185,15 @@ commit = "29be0919b91fb59eca9e90690d76014233392bef",
   --   end,
   -- },
   --
-  -- {
-  -- 	"williamboman/mason.nvim",
-  -- 	opts = {
-  -- 		ensure_installed = {
-  -- 			"lua-language-server", "stylua",
-  -- 			"html-lsp", "css-lsp" , "prettier"
-  -- 		},
-  -- 	},
-  -- },
+  {
+  	"williamboman/mason.nvim",
+  	opts = {
+  		ensure_installed = {
+  			"lua-language-server", "stylua", "gopls", "templ",
+  			"html-lsp", "css-lsp" , "prettier", "tailwindcss-language-server",
+  		},
+  	},
+  },
   --
   -- {
   -- 	"nvim-treesitter/nvim-treesitter",
