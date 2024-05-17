@@ -5,7 +5,6 @@ vim.opt.relativenumber = true
 vim.opt.spelllang = 'en_us'
 vim.opt.spell = true
 -- Line wrapping
-vim.opt.textwidth = 80
 vim.opt.wrap = true
 vim.opt.linebreak = true
 vim.filetype.add({ extension = { templ = "templ" } })

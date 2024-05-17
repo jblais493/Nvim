@@ -75,6 +75,15 @@ return {
   on_close = function()
   end,
 }},
+  {
+    -- Add indentation guides even on blank lines
+    "lukas-reineke/indent-blankline.nvim",
+    main = "ibl",
+    opts = {
+      char = '┊',
+      show_trailing_blankline_indent = true
+    },
+  },
 
   {
  "vhyrro/luarocks.nvim",
@@ -92,8 +101,8 @@ return {
   config = function()
     -- Setup orgmode
     require('orgmode').setup({
-      org_agenda_files = '/mnt/TrueNAS/org/',
-      org_default_notes_file = '/mnt/TrueNAS/org/todo.org',
+      org_agenda_files = '~/Vaults/Personal',
+      org_default_notes_file = '~/Vaults/Personal/inbox.md',
     })
 
     -- NOTE: If you are using nvim-treesitter with `ensure_installed = "all"` option
@@ -133,13 +142,26 @@ return {
     workspaces = {
       {
         name = "personal",
-        path = "~/vaults/personal",
+        path = "~/Vaults/Personal",
       },
       {
         name = "work",
-        path = "~/vaults/work",
+        path = "~/Vaults/Work",
       },
-    },
+      {
+        name = "writing",
+        path = "~/Vaults/Writing",
+      },
+    },-- Specify how to handle attachments.
+  attachments = {
+    -- The default folder to place images in via `:ObsidianPasteImg`.
+    -- If this is a relative path it will be interpreted as relative to the vault root.
+    -- You can always override this per image by passing a full path to the command instead of just a filename.
+    img_folder = "assets/imgs",  -- This is the default
+    -- A function that determines the text to insert in the note when pasting an image.
+    -- It takes two arguments, the `obsidian.Client` and an `obsidian.Path` to the image file.
+    -- This is the default implementation.
+  },
 
     -- see below for full list of options 👇
   },
