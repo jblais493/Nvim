@@ -18,5 +18,8 @@ vim.keymap.set('', 'F', function()
 end, {remap=true})
 
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
-vim.api.nvim_set_keymap('n', '<leader>on', ':ObsidianNew<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<leader>fc', ':Commands<CR>', { noremap = true, silent = true })
+-- convert note to template and remove leading white space
+vim.keymap.set("n", "<leader>on", ":ObsidianTemplate note<cr> :lua vim.cmd([[1,/^\\S/s/^\\n\\{1,}//]])<cr>")
+
+-- zen mode
+vim.keymap.set("n", "<leader>zn", ":ZenMode<cr>")
