@@ -20,6 +20,7 @@ end, {remap=true})
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
 -- convert note to template and remove leading white space
 vim.keymap.set("n", "<leader>on", ":ObsidianTemplate note<cr> :lua vim.cmd([[1,/^\\S/s/^\\n\\{1,}//]])<cr>")
+vim.keymap.set("n", "<leader>od", ":ObsidianTemplate daily<cr> :lua vim.cmd([[1,/^\\S/s/^\\n\\{1,}//]])<cr>")
 
 -- zen mode
 vim.keymap.set("n", "<leader>zn", ":ZenMode<cr>")
