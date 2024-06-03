@@ -19,10 +19,29 @@ end, {remap=true})
 
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
 -- convert note to template and remove leading white space
-vim.keymap.set("n", "<leader>on", ":ObsidianTemplate note<cr> :lua vim.cmd([[1,/^\\S/s/^\\n\\{1,}//]])<cr>")
-vim.keymap.set("n", "<leader>od", ":ObsidianTemplate daily<cr> :lua vim.cmd([[1,/^\\S/s/^\\n\\{1,}//]])<cr>")
-vim.keymap.set("n", "<leader>ow", ":ObsidianTemplate writing<cr> :lua vim.cmd([[1,/^\\S/s/^\\n\\{1,}//]])<cr>")
-vim.keymap.set("n", "<leader>ot", ":ObsidianTemplate contact<cr> :lua vim.cmd([[1,/^\\S/s/^\\n\\{1,}//]])<cr>")
+vim.keymap.set("n", "<leader>on", function()
+  vim.cmd("ObsidianTemplate note")
+  vim.cmd([[1,/^\S/s/^\n\{1,}//]])
+end)
+
+vim.keymap.set("n", "<leader>od", function()
+  vim.cmd("ObsidianTemplate daily")
+  vim.cmd([[1,/^\S/s/^\n\{1,}//]])
+end)
+
+vim.keymap.set("n", "<leader>ow", function()
+  vim.cmd("ObsidianTemplate writing")
+  vim.cmd([[1,/^\S/s/^\n\{1,}//]])
+end)
+
+vim.keymap.set("n", "<leader>ot", function()
+  vim.cmd("ObsidianTemplate contact")
+  vim.cmd([[1,/^\S/s/^\n\{1,}//]])
+end)
+
+vim.keymap.set("n", "<leader>tt", function()
+  vim.cmd("ObsidianTags")
+end)
 
 -- zen mode
 vim.keymap.set("n", "<leader>zn", ":ZenMode<cr>")
