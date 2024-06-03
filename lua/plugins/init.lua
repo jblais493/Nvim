@@ -87,6 +87,10 @@ return {
     end,
   },
 
+  {'tpope/vim-dadbod',},
+  {'kristijanhusak/vim-dadbod-ui',},
+  {'kristijanhusak/vim-dadbod-completion',},
+
   {
     'smoka7/hop.nvim',
     version = "*",
@@ -150,12 +154,17 @@ return {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
-        "lua-language-server", "stylua", "gopls", "templ",
+        "lua-language-server", "stylua", "gopls", "templ", "sql",
         "html-lsp", "css-lsp", "prettier", "tailwindcss-language-server",
       },
     },
   },
 
+{
+    "ThePrimeagen/harpoon",
+    branch = "harpoon2",
+    dependencies = { "nvim-lua/plenary.nvim" }
+},
 
 {
   "rcarriga/nvim-notify",
