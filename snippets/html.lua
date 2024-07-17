@@ -81,6 +81,10 @@ return {
     class_snippet("p"),
     s("p", fmt("<p>{}</p>", { i(1) })),
 
+    -- Span 
+    class_snippet("span"),
+    s("span", fmt("<span>{}</span>", { i(1) })),
+
     -- Headings with multiple classes
     class_snippet("h1"),
     class_snippet("h2"),
