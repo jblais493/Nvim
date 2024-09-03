@@ -39,6 +39,12 @@ vim.keymap.set("n", "<leader>ot", function()
   vim.cmd([[1,/^\S/s/^\n\{1,}//]])
 end)
 
+vim.keymap.set("n", "<leader>ob", function()
+  vim.cmd("ObsidianTemplate books")
+  vim.cmd([[1,/^\S/s/^\n\{1,}//]])
+end)
+
+
 vim.keymap.set("n", "<leader>tt", function()
   vim.cmd("ObsidianTags")
 end)
