@@ -13,4 +13,5 @@ return {
   { import = "plugins.nvim-notify" },
   { import = "plugins.luasnip" },
   { import = "plugins.noice" },
+  { import = "plugins.markdown-preview" },
 }
